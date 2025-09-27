@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDGE WEAR - Streetwear & Moda Urbana</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="logo">EW</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <span>🔍</span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#hoodies">Moletons</a></li>
+                <li><a href="#streetwear">Streetwear</a></li>
+                <li><a href="#sneakers">Tênis</a></li>
+                <li><a href="#outlet">Promoções</a></li>
+            </ul>
+
+            <div class="profile-section">
+                <div class="cart-icon">
+                    🛒
+                    <span class="cart-count">3</span>
+                </div>
+                <div class="profile-pic" onclick="toggleProfile()">
+                    👤
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>EDGE WEAR</h1>
+            <p>Estilo autêntico que define sua personalidade nas ruas</p>
+            <button class="cta-button" onclick="scrollToProducts()">Explorar Coleção</button>
+        </div>
+    </section>
+
+    <section class="carousel-section" id="produtos">
+        <h2 class="section-title">Lançamentos</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="productCarousel">
+                <div class="product-card">
+                    <div class="product-image">Moletom Oversized</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Moletom Oversized Essential</h3>
+                        <p class="product-description">Moletom oversized premium, 100% algodão, perfeito para o street</p>
+                        <div class="product-price">
+                            <span class="price">R$ 189,90</span>
+                            <span class="old-price">R$ 249,90</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Moletom Oversized')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Calça Cargo</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Calça Cargo Urbana</h3>
+                        <p class="product-description">Calça cargo com fit relaxado e múltiplos bolsos funcionais</p>
+                        <div class="product-price">
+                            <span class="price">R$ 229,90</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Calça Cargo')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Camiseta Vintage</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Camiseta Vintage Gráfica</h3>
+                        <p class="product-description">Camiseta vintage com estampa exclusiva, edição limitada</p>
+                        <div class="product-price">
+                            <span class="price">R$ 89,90</span>
+                            <span class="old-price">R$ 119,90</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Camiseta Vintage')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Jaqueta Bomber</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Jaqueta Bomber Clássica</h3>
+                        <p class="product-description">Jaqueta bomber clássica com acabamentos premium</p>
+                        <div class="product-price">
+                            <span class="price">R$ 299,90</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Jaqueta Bomber')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Conjunto Street</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Conjunto Streetwear</h3>
+                        <p class="product-description">Set completo moletom + jogger com design combinando</p>
+                        <div class="product-price">
+                            <span class="price">R$ 349,90</span>
+                            <span class="old-price">R$ 449,90</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Conjunto Street')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Tênis Urbano</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tênis Estilo Urbano</h3>
+                        <p class="product-description">Sneaker urbano com sola chunky e design contemporâneo</p>
+                        <div class="product-price">
+                            <span class="price">R$ 399,90</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Tênis Urbano')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-nav prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-nav next" onclick="nextSlide()">❯</button>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="categories-container">
+            <h2 class="section-title">Categorias</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterCategory('moletons')">
+                    <div class="category-icon">🧥</div>
+                    <h3 class="category-name">Moletons</h3>
+                </div>
+                <div class="category-card" onclick="filterCategory('camisetas')">
+                    <div class="category-icon">👕</div>
+                    <h3 class="category-name">Camisetas</h3>
+                </div>
+                <div class="category-card" onclick="filterCategory('calcas')">
+                    <div class="category-icon">👖</div>
+                    <h3 class="category-name">Calças</h3>
+                </div>
+                <div class="category-card" onclick="filterCategory('tenis')">
+                    <div class="category-icon">👟</div>
+                    <h3 class="category-name">Tênis</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A EDGE WEAR é uma loja especializada em streetwear e moda urbana. Oferecemos peças autênticas com atitude e estilo para quem vive a cultura das ruas.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Atendimento</h3>
+                <p><strong>Telefone:</strong> (11) 4000-0000</p>
+                <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
+                <p><strong>Email:</strong> contato@edgewear.com.br</p>
+                <p><strong>Horário:</strong> Seg a Sex, 8h às 18h</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <p><a href="#contato">Contato</a></p>
+                <p><a href="#faq">Perguntas Frequentes</a></p>
+                <p><a href="#trocas">Trocas e Devoluções</a></p>
+                <p><a href="#entrega">Política de Entrega</a></p>
+                <p><a href="#privacidade">Política de Privacidade</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <p>Acompanhe nossas redes sociais para ficar por dentro dos lançamentos e promoções exclusivas!</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">🐦</a>
+                    <a href="#" class="social-icon">💬</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EDGE WEAR. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
